@@ -1,0 +1,9 @@
+{
+  "name": "single-restend-string-flip",
+  "version": "0.0.0",
+  "description": "SingleRESTEndStringFlip",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
