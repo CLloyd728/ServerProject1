@@ -10,9 +10,12 @@ app.use(
 app.put('/', (req, res) => {
     var str = JSON.stringify(req.body)
     console.log(str)
+    //makes the string an array so that the native reverse function to flip it
     var stringar = str.split("")
-    var reversear = stringar.reverse()
-    str = reversear.join("")
+    stringar = stringar.reverse()
+    //makes the ar a string again
+    str = stringar.join("")
+    //rips of the fliped formatting characters then reapplies them correctly
     str = str.substr(2, str.length - 4)
     str = '["' + str + '"]'
     console.log(str)
