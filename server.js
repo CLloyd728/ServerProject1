@@ -1,9 +1,21 @@
 var express = require('express'); // requre the express framework
 var app = express();
-
-// Endpoint to Get a list of users
+app.use(express.json());
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+)
+//the function for when a put request is made flips all of the text as of now including the formating
 app.put('/', (req, res) => {
-    res.end("Test");
+    res.end("Test")
+    var str = JSON.stringify(req.body)
+    console.log(str)
+    var stringar = str.split("")
+    var reversear = stringar.reverse()
+    str = reversear.join("")
+    console.log(str)
+    return str
 })
 //just some text on the main page to make sure that it is all loading
 app.get('/', function (req, res) {
@@ -14,5 +26,5 @@ app.get('/', function (req, res) {
 var server = app.listen(1337, function () {
     var host = server.address().address
     var port = server.address().port
-    console.log("ServerProject1 listening at http://%s:%s", host, port)
+    console.log("ServerProject1 listening at http://%s", port)
 })
