@@ -1,7 +1,7 @@
 var express = require('express'); // requre the express framework
 var app = express();
 
-// Endpoint to Get a list of users
+// Endpoint Test
 app.put('/', (req, res) => {
     res.end("Test");
 })
