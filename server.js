@@ -8,14 +8,15 @@ app.use(
 )
 //the function for when a put request is made flips all of the text as of now including the formating
 app.put('/', (req, res) => {
-    res.end("Test")
     var str = JSON.stringify(req.body)
     console.log(str)
     var stringar = str.split("")
     var reversear = stringar.reverse()
     str = reversear.join("")
+    str = str.substr(2, str.length - 4)
+    str = '["' + str + '"]'
     console.log(str)
-    return str
+    res.end(str);
 })
 //just some text on the main page to make sure that it is all loading
 app.get('/', function (req, res) {
