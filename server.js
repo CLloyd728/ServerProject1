@@ -15,13 +15,13 @@ app.put('/', (req, res) => {
     stringar = stringar.reverse()
     //makes the ar a string again
     str = stringar.join("")
-    //rips of the fliped formatting characters then reapplies them correctly
+    //rips off the fliped formatting characters then reapplies them correctly
     str = str.substr(2, str.length - 4)
     str = '["' + str + '"]'
     console.log(str)
     res.end(str);
 })
-//just some text on the main page to make sure that it is all loading
+//just some text on the main page because visual studios opens the page so I just put something on it
 app.get('/', function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('This is the test webpage just to show that it is running\n');
